@@ -767,7 +767,7 @@ function StarcraftMatchGroupInput.MapInput(match, i, subgroup)
 	end
 
 	--handle subgroup stuff if team match
-	if string.find(match.mode, 'team') then
+	if string.find(match.mode, 'team') or Logic.readBool(match.hasSubMatch) then
 		match['map' .. i].subgroup = tonumber(match['map' .. i].subgroup or '')
 		if match['map' .. i].subgroup then
 			subgroup = match['map' .. i].subgroup
